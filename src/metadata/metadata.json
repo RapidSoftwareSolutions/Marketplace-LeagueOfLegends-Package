@@ -1,0 +1,1779 @@
+{
+  "package": "LeagueOfLegends",
+  "tagline": "LeagueOfLegends API",
+  "description": "LeagueOfLegends",
+  "image": "http:\/\/logo.clearbit.com\/leagueoflegends.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-LeagueOfLegends-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "leagueoflegends.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getAllChampionMasteries",
+      "description": "Get all champion mastery entries sorted by number of champion points descending",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Summoner ID associated with the player",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleChampionMastery",
+      "description": "Get a champion mastery by player ID and champion ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Summoner ID associated with the player",
+          "required": true
+        },
+        {
+          "name": "championId",
+          "type": "Number",
+          "info": "Champion ID to retrieve Champion Mastery for",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChampionMasteryScore",
+      "description": "Get a player's total champion mastery score, which is the sum of individual champion mastery levels.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Summoner ID associated with the player",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChampions",
+      "description": "Retrieve all champions",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChampionById",
+      "description": "Retrieve champion by ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "championId",
+          "type": "Number",
+          "info": "Id of the champion",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLeaguesForSummonerIds",
+      "description": "Get leagues mapped by summoner ID for a given list of summoner IDs.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerIds",
+          "type": "String",
+          "info": "Comma-separated list of summoner IDs. Maximum allowed at once is 10.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLeagueEntriesForSummonerIds",
+      "description": "Get league entries mapped by summoner ID for a given list of summoner IDs.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerIds",
+          "type": "String",
+          "info": "Comma-separated list of summoner IDs. Maximum allowed at once is 10.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChallengerLeagues",
+      "description": "Get challenger tier leagues.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMasterLeagues",
+      "description": "Get master tier leagues.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChallengerLeague",
+      "description": "Get the challenger league for a given queue.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getAllLeaguesForSummoner",
+      "description": "Get leagues in all queues for a given summoner ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Id of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMasterLeague",
+      "description": "Get the master league for a given queue.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getAllLeaguePositionsForSummoner",
+      "description": "Get league positions in all queues for a given summoner ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Id of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getShardData",
+      "description": "Get League of Legends status for the given shard.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMasteryPagesBySummonerId",
+      "description": "Get mastery pages for a given summoner ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Id of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMatchIdsByTournamentCode",
+      "description": "Get match IDs by tournament code",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "tournamentCode",
+          "type": "String",
+          "info": "Code of the tournament",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMatch",
+      "description": "Get match by match ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "matchId",
+          "type": "Number",
+          "info": "Id of the match",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMatchByTournamentCode",
+      "description": "Get match by match ID and tournament code",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "matchId",
+          "type": "Number",
+          "info": "Id of the match",
+          "required": true
+        },
+        {
+          "name": "tournamentCode",
+          "type": "String",
+          "info": "Code of the tournament",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMatchlist",
+      "description": "Get matchlist for ranked games played on given account ID and platform ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "accountId",
+          "type": "Number",
+          "info": "Id of the account",
+          "required": true
+        },
+        {
+          "name": "queue",
+          "type": "String",
+          "info": "Set of queue IDs for which to filtering matchlist.",
+          "required": false
+        },
+        {
+          "name": "beginTime",
+          "type": "Number",
+          "info": "The begin time to use for filtering matchlist specified as epoch milliseconds",
+          "required": false
+        },
+        {
+          "name": "endIndex",
+          "type": "Number",
+          "info": "The end index to use for filtering matchlist.",
+          "required": false
+        },
+        {
+          "name": "season",
+          "type": "String",
+          "info": "Set of season IDs for which to filtering matchlist.",
+          "required": false
+        },
+        {
+          "name": "champion",
+          "type": "String",
+          "info": "Set of champion IDs for which to filtering matchlist.",
+          "required": false
+        },
+        {
+          "name": "beginIndex",
+          "type": "Number",
+          "info": "The begin index to use for filtering matchlist.",
+          "required": false
+        },
+        {
+          "name": "endTime",
+          "type": "Number",
+          "info": "The end time to use for filtering matchlist specified as epoch milliseconds",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRecentMatchlist",
+      "description": "Get matchlist for last 20 matches played on given account ID and platform ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "accountId",
+          "type": "Number",
+          "info": "Id of the account",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMatchTimeline",
+      "description": "Get match timeline by match ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "matchId",
+          "type": "Number",
+          "info": "Id of the match",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRunePagesBySummonerId",
+      "description": "Get rune pages for a given summoner ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Id of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getCurrentGameInfoBySummoner",
+      "description": "Get current game information for the given summoner ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Id of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getFeaturedGames",
+      "description": "Get list of featured games",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChampionList",
+      "description": "Retrieves champion list",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "champListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        },
+        {
+          "name": "dataById",
+          "type": "Boolean",
+          "info": "If specified as true, the returned data map will use the champions' IDs as the keys. If not specified or specified as false, the returned data map will use the champions' keys instead.",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getChampionDataById",
+      "description": "Retrieves champion by ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "championId",
+          "type": "Number",
+          "info": "Id of the champion",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "champData",
+          "type": "String",
+          "info": "Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getItemList",
+      "description": "Retrieves item list",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "itemListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, basic, data, id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getItemById",
+      "description": "Retrieves item by ID",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "itemId",
+          "type": "Number",
+          "info": "Id of the item",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "itemData",
+          "type": "String",
+          "info": "Tags to return additional data. Only id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguageStrings",
+      "description": "Retrieve language strings data",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLanguages",
+      "description": "Retrieve supported languages data.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMapData",
+      "description": "Retrieve map data.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMasteryList",
+      "description": "Retrieves mastery list",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "masteryListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMasteryById",
+      "description": "Retrieves mastery item by ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "masteryId",
+          "type": "Number",
+          "info": "Id of the mastery",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "masteryListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getProfileIcons",
+      "description": "Retrieve profile icons",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRealm",
+      "description": "Retrieve realm data",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRuneList",
+      "description": "Retrieves runes list",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "runeListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getRuneById",
+      "description": "Retrieves rune by ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "runeId",
+          "type": "Number",
+          "info": "Id of the rune",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "runeListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSummonerSpellList",
+      "description": "Retrieves summoner spell list",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "spellListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        },
+        {
+          "name": "dataById",
+          "type": "Boolean",
+          "info": "If specified as true, the returned data map will use the spells' IDs as the keys. If not specified or specified as false, the returned data map will use the spells' keys instead.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSummonerSpellList",
+      "description": "Retrieves summoner spell list",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerSpellId",
+          "type": "Number",
+          "info": "Id of the summoner spell",
+          "required": true
+        },
+        {
+          "name": "version",
+          "type": "String",
+          "info": "Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "String",
+          "info": "Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.",
+          "required": false
+        },
+        {
+          "name": "spellListData",
+          "type": "String",
+          "info": "Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getVersions",
+      "description": "Retrieve version data",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getByAccountId",
+      "description": "Get a summoner by account ID.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "accountId",
+          "type": "Number",
+          "info": "Id of the account",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getBySummonerName",
+      "description": "Get a summoner by summoner name.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerName",
+          "type": "String",
+          "info": "Name of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getBySummonerId",
+      "description": "Get a summoner by summoner id.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "summonerId",
+          "type": "Number",
+          "info": "Id of the summoner",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMockLobbyEventsByCode",
+      "description": "Gets a mock list of lobby events by tournament code",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "tournamentCode",
+          "type": "String",
+          "info": "Code of the tournament",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTournamentCode",
+      "description": "Returns the tournament code DTO associated with a tournament code string",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "tournamentCode",
+          "type": "String",
+          "info": "Code of the tournament",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLobbyEventsByCode",
+      "description": "Gets a list of lobby events by tournament code.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Riot",
+          "required": true
+        },
+        {
+          "name": "region",
+          "type": "String",
+          "info": "Region to execute against",
+          "required": true
+        },
+        {
+          "name": "tournamentCode",
+          "type": "String",
+          "info": "Code of the tournament",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
