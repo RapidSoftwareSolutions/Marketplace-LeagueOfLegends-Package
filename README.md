@@ -6,7 +6,7 @@ LeagueOfLegends
 * Credentials: apiKey
 
 ## How to get credentials: 
-0. Go to [Riot Games Developer Website] (https://developer.riotgames.com/)
+0. Go to [Riot Games Developer Website](https://developer.riotgames.com/)
 1. Register or log in
 2. Register an application to get production keys.
 
