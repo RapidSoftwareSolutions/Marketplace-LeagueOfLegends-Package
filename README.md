@@ -19,6 +19,7 @@ Get all champion mastery entries sorted by number of champion points descending
 | region    | String     | Region to execute against
 | summonerId| Number     | Summoner ID associated with the player
 
+
 ## LeagueOfLegends.getSingleChampionMastery
 Get a champion mastery by player ID and champion ID
 
@@ -383,8 +384,8 @@ Retrieves summoner spell list
 | spellListData| String     | Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 | dataById     | Boolean    | If specified as true, the returned data map will use the spells' IDs as the keys. If not specified or specified as false, the returned data map will use the spells' keys instead.
 
-## LeagueOfLegends.getSummonerSpellList
-Retrieves summoner spell list
+## LeagueOfLegends.getSummonerSpellById
+Retrieves summoner spell by id
 
 | Field          | Type       | Description
 |----------------|------------|----------

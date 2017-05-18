@@ -1492,8 +1492,8 @@
       ]
     },
     {
-      "name": "getSummonerSpellList",
-      "description": "Retrieves summoner spell list",
+      "name": "getSummonerSpellById",
+      "description": "Retrieves summoner spell by id",
       "args": [
         {
           "name": "apiKey",
