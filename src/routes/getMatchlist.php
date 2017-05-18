@@ -11,7 +11,7 @@ $app->post('/api/LeagueOfLegends/getMatchlist', function ($request, $response, $
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    $query_str = 'https://' . $post_data['args']['region'] . $settings['api_url'] . "lol/match/v3/matchlist/by-account" . $post_data['args']['accountId'];
+    $query_str = 'https://' . $post_data['args']['region'] . $settings['api_url'] . "lol/match/v3/matchlists/by-account/" . $post_data['args']['accountId'];
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
     if (isset($post_data['args']['queue']) && strlen($post_data['args']['queue']) > 0) {
