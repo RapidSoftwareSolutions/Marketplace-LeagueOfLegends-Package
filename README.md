@@ -1,7 +1,7 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/LeagueOfLegends/functions?utm_source=RapidAPIGitHub_LeagueOfLegendsFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # LeagueOfLegends Package
-LeagueOfLegends
+API for well-known game League Of Legends
 * Domain: [League of Legends](http://leagueoflegends.com)
 * Credentials: apiKey
 
