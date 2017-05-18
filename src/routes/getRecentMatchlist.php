@@ -11,7 +11,7 @@ $app->post('/api/LeagueOfLegends/getRecentMatchlist', function ($request, $respo
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    $query_str = 'https://' . $post_data['args']['region'] . $settings['api_url'] . "lol/match/v3/matchlists/by-account" . $post_data['args']['accountId']."/recent";
+    $query_str = 'https://' . $post_data['args']['region'] . $settings['api_url'] . "lol/match/v3/matchlists/by-account/" . $post_data['args']['accountId']."/recent";
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
 
