@@ -11,7 +11,7 @@ $app->post('/api/LeagueOfLegends/getChampionById', function ($request, $response
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    $query_str = 'https://'.$post_data['args']['region'].$settings['api_url'] . "platform/v3/champions/".$post_data['args']['championId'];
+    $query_str = 'https://'.$post_data['args']['region'].$settings['api_url'] . "lol/platform/v3/champions/".$post_data['args']['championId'];
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
 
