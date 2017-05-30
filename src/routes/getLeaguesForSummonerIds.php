@@ -11,7 +11,8 @@ $app->post('/api/LeagueOfLegends/getLeaguesForSummonerIds', function ($request, 
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    $query_str = 'https://'.$post_data['args']['region'].$settings['api_url']."api/lol/" .$post_data['args']['region']. "/v2.5/league/by-summoner/".$post_data['args']['summonerIds'];
+    $summonerIds = is_array($post_data['args']['summonerIds']) ? implode(',', $post_data['args']['summonerIds']) : $post_data['args']['summonerIds'];
+    $query_str = 'https://' . $post_data['args']['region'] . $settings['api_url'] . "api/lol/" . $post_data['args']['region'] . "/v2.5/league/by-summoner/" . $summonerIds;
     $body = array();
     $body['api_key'] = $post_data['args']['apiKey'];
 

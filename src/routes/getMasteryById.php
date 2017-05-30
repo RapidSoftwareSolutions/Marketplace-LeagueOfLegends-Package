@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getMasteryById', function ($request, $response,
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['masteryData']) && strlen($post_data['args']['masteryData']) > 0) {
-        $body['masteryData'] = $post_data['args']['masteryData'];
+    if (!empty($post_data['args']['masteryData'])) {
+        $body['masteryData'] = is_array($post_data['args']['masteryData']) ? implode(',', $post_data['args']['masteryData']) : $post_data['args']['masteryData'];
     }
 
 

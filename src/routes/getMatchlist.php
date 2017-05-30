@@ -18,7 +18,13 @@ $app->post('/api/LeagueOfLegends/getMatchlist', function ($request, $response, $
         $body['queue'] = $post_data['args']['queue'];
     }
     if (isset($post_data['args']['beginTime']) && strlen($post_data['args']['beginTime']) > 0) {
-        $body['beginTime'] = $post_data['args']['beginTime'];
+        if (is_numeric($post_data['args']['beginTime'])) {
+            $beginTime = $post_data['args']['beginTime'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['beginTime']);
+            $beginTime = $dateTime->format('u');
+        }
+        $body['beginTime'] = $beginTime;
     }
     if (isset($post_data['args']['endIndex']) && strlen($post_data['args']['endIndex']) > 0) {
         $body['endIndex'] = $post_data['args']['endIndex'];
@@ -33,7 +39,14 @@ $app->post('/api/LeagueOfLegends/getMatchlist', function ($request, $response, $
         $body['beginIndex'] = $post_data['args']['beginIndex'];
     }
     if (isset($post_data['args']['endTime']) && strlen($post_data['args']['endTime']) > 0) {
-        $body['endTime'] = $post_data['args']['endTime'];
+        if (is_numeric($post_data['args']['endTime'])) {
+            $endTime = $post_data['args']['endTime'];
+        } else {
+            $dateTime = new DateTime($post_data['args']['endTime']);
+            $endTime = $dateTime->format('u');
+        }
+
+        $body['endTime'] = $endTime;
     }
 
     //requesting remote API

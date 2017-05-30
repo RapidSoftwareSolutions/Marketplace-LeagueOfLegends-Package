@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getSummonerSpellById', function ($request, $res
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['spellData']) && strlen($post_data['args']['spellData']) > 0) {
-        $body['spellData'] = $post_data['args']['spellData'];
+    if (!empty($post_data['args']['spellData'])) {
+        $body['spellData'] = is_array($post_data['args']['spellData']) ? implode(',', $post_data['args']['spellData']) : $post_data['args']['spellData'];
     }
 
 

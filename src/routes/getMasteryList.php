@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getMasteryList', function ($request, $response,
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['masteryListData']) && strlen($post_data['args']['masteryListData']) > 0) {
-        $body['masteryListData'] = $post_data['args']['masteryListData'];
+    if (!empty($post_data['args']['masteryListData'])) {
+        $body['masteryListData'] = is_array($post_data['args']['masteryListData']) ? implode(',', $post_data['args']['masteryListData']) : $post_data['args']['masteryListData'];
     }
 
 

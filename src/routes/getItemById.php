@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getItemById', function ($request, $response, $a
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['itemData']) && strlen($post_data['args']['itemData']) > 0) {
-        $body['itemData'] = $post_data['args']['itemData'];
+    if (!empty($post_data['args']['itemData'])) {
+        $body['itemData'] = is_array($post_data['args']['itemData']) ? implode(',', $post_data['args']['itemData']) : $post_data['args']['itemData'];
     }
 
     //requesting remote API

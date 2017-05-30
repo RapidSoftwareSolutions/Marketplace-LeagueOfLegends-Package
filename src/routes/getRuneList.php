@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getRuneList', function ($request, $response, $a
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['runeListData']) && strlen($post_data['args']['runeListData']) > 0) {
-        $body['runeListData'] = $post_data['args']['runeListData'];
+    if (!empty($post_data['args']['runeListData'])) {
+        $body['runeListData'] = is_array($post_data['args']['runeListData']) ? implode(',', $post_data['args']['runeListData']) : $post_data['args']['runeListData'];
     }
 
 

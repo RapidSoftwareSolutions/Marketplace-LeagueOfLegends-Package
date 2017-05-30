@@ -201,9 +201,14 @@
         },
         {
           "name": "summonerIds",
-          "type": "String",
-          "info": "Comma-separated list of summoner IDs. Maximum allowed at once is 10.",
-          "required": true
+          "type": "List",
+          "info": "Array of summoner IDs. Maximum allowed at once is 10.",
+          "required": true,
+          "structure": {
+            "name": "summonerId",
+            "type": "String",
+            "info": "Single summoner id"
+          }
         }
       ],
       "callbacks": [
@@ -235,9 +240,14 @@
         },
         {
           "name": "summonerIds",
-          "type": "String",
-          "info": "Comma-separated list of summoner IDs. Maximum allowed at once is 10.",
-          "required": true
+          "type": "List",
+          "info": "Array of summoner IDs. Maximum allowed at once is 10.",
+          "required": true,
+          "structure": {
+            "name": "summonerId",
+            "type": "String",
+            "info": "Single summoner id"
+          }
         }
       ],
       "callbacks": [
@@ -269,7 +279,8 @@
         },
         {
           "name": "type",
-          "type": "String",
+          "type": "Select",
+          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5", "RANKED_TEAM_5x5", "RANKED_TEAM_3x3"],
           "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3",
           "required": true
         }
@@ -303,7 +314,8 @@
         },
         {
           "name": "type",
-          "type": "String",
+          "type": "Select",
+          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5", "RANKED_TEAM_5x5", "RANKED_TEAM_3x3"],
           "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3",
           "required": true
         }
@@ -337,7 +349,8 @@
         },
         {
           "name": "type",
-          "type": "String",
+          "type": "Select",
+          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5"],
           "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5",
           "required": true
         }
@@ -405,7 +418,8 @@
         },
         {
           "name": "type",
-          "type": "String",
+          "type": "Select",
+          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5"],
           "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5",
           "required": true
         }
@@ -655,8 +669,8 @@
         },
         {
           "name": "beginTime",
-          "type": "Number",
-          "info": "The begin time to use for filtering matchlist specified as epoch milliseconds",
+          "type": "DatePicker",
+          "info": "The begin time to use for filtering matchlist",
           "required": false
         },
         {
@@ -685,8 +699,8 @@
         },
         {
           "name": "endTime",
-          "type": "Number",
-          "info": "The end time to use for filtering matchlist specified as epoch milliseconds",
+          "type": "DatePicker",
+          "info": "The end time to use for filtering matchlist",
           "required": false
         }
       ],
@@ -889,9 +903,14 @@
         },
         {
           "name": "champListData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         },
         {
           "name": "dataById",
@@ -953,9 +972,14 @@
         },
         {
           "name": "champData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         }
       ],
       "callbacks": [
@@ -999,9 +1023,14 @@
         },
         {
           "name": "itemListData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, basic, data, id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single item data"
+          }
         }
       ],
       "callbacks": [
@@ -1051,9 +1080,14 @@
         },
         {
           "name": "itemData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single item data"
+          }
         }
       ],
       "callbacks": [
@@ -1205,9 +1239,14 @@
         },
         {
           "name": "masteryListData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         }
       ],
       "callbacks": [
@@ -1257,9 +1296,14 @@
         },
         {
           "name": "masteryListData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         }
       ],
       "callbacks": [
@@ -1371,9 +1415,14 @@
         },
         {
           "name": "runeListData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         }
       ],
       "callbacks": [
@@ -1422,10 +1471,15 @@
           "required": false
         },
         {
-          "name": "runeListData",
-          "type": "String",
+          "name": "runeData",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         }
       ],
       "callbacks": [
@@ -1469,9 +1523,14 @@
         },
         {
           "name": "spellListData",
-          "type": "String",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         },
         {
           "name": "dataById",
@@ -1526,10 +1585,15 @@
           "required": false
         },
         {
-          "name": "spellListData",
-          "type": "String",
+          "name": "spellData",
+          "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "data",
+            "type": "String",
+            "info": "Single data"
+          }
         }
       ],
       "callbacks": [

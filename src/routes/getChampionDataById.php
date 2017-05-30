@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getChampionDataById', function ($request, $resp
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['champData']) && strlen($post_data['args']['champData']) > 0) {
-        $body['champData'] = $post_data['args']['champData'];
+    if (!empty($post_data['args']['champData'])) {
+        $body['champData'] = is_array($post_data['args']['champData']) ? implode(',', $post_data['args']['champData']) : $post_data['args']['champData'];
     }
 
 

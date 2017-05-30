@@ -2,13 +2,24 @@
 
 # LeagueOfLegends Package
 API for well-known game League Of Legends
-* Domain: [League of Legends](http://leagueoflegends.com)
+* Domain: [LeagueOfLegends](http://leagueoflegends.com)
 * Credentials: apiKey
 
 ## How to get credentials: 
 0. Go to [Riot Games Developer Website](https://developer.riotgames.com/)
 1. Register or log in
 2. Register an application to get production keys.
+
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
 
 ## LeagueOfLegends.getAllChampionMasteries
 Get all champion mastery entries sorted by number of champion points descending
@@ -18,7 +29,6 @@ Get all champion mastery entries sorted by number of champion points descending
 | apiKey    | credentials| Api key obtained from Riot
 | region    | String     | Region to execute against
 | summonerId| Number     | Summoner ID associated with the player
-
 
 ## LeagueOfLegends.getSingleChampionMastery
 Get a champion mastery by player ID and champion ID
@@ -63,7 +73,7 @@ Get leagues mapped by summoner ID for a given list of summoner IDs.
 |------------|------------|----------
 | apiKey     | credentials| Api key obtained from Riot
 | region     | String     | Region to execute against
-| summonerIds| String     | Comma-separated list of summoner IDs. Maximum allowed at once is 10.
+| summonerIds| List       | Array of summoner IDs. Maximum allowed at once is 10.
 
 ## LeagueOfLegends.getLeagueEntriesForSummonerIds
 Get league entries mapped by summoner ID for a given list of summoner IDs.
@@ -72,7 +82,7 @@ Get league entries mapped by summoner ID for a given list of summoner IDs.
 |------------|------------|----------
 | apiKey     | credentials| Api key obtained from Riot
 | region     | String     | Region to execute against
-| summonerIds| String     | Comma-separated list of summoner IDs. Maximum allowed at once is 10.
+| summonerIds| List       | Array of summoner IDs. Maximum allowed at once is 10.
 
 ## LeagueOfLegends.getChallengerLeagues
 Get challenger tier leagues.
@@ -81,7 +91,7 @@ Get challenger tier leagues.
 |-------|------------|----------
 | apiKey| credentials| Api key obtained from Riot
 | region| String     | Region to execute against
-| type  | String     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3
+| type  | Select     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3
 
 ## LeagueOfLegends.getMasterLeagues
 Get master tier leagues.
@@ -90,7 +100,7 @@ Get master tier leagues.
 |-------|------------|----------
 | apiKey| credentials| Api key obtained from Riot
 | region| String     | Region to execute against
-| type  | String     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3
+| type  | Select     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3
 
 ## LeagueOfLegends.getChallengerLeague
 Get the challenger league for a given queue.
@@ -99,7 +109,7 @@ Get the challenger league for a given queue.
 |-------|------------|----------
 | apiKey| credentials| Api key obtained from Riot
 | region| String     | Region to execute against
-| type  | String     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5
+| type  | Select     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5
 
 ## LeagueOfLegends.getAllLeaguesForSummoner
 Get leagues in all queues for a given summoner ID
@@ -117,7 +127,7 @@ Get the master league for a given queue.
 |-------|------------|----------
 | apiKey| credentials| Api key obtained from Riot
 | region| String     | Region to execute against
-| type  | String     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5
+| type  | Select     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5
 
 ## LeagueOfLegends.getAllLeaguePositionsForSummoner
 Get league positions in all queues for a given summoner ID.
@@ -182,12 +192,12 @@ Get matchlist for ranked games played on given account ID and platform ID
 | region    | String     | Region to execute against
 | accountId | Number     | Id of the account
 | queue     | String     | Set of queue IDs for which to filtering matchlist.
-| beginTime | Number     | The begin time to use for filtering matchlist specified as epoch milliseconds
+| beginTime | DatePicker | The begin time to use for filtering matchlist
 | endIndex  | Number     | The end index to use for filtering matchlist.
 | season    | String     | Set of season IDs for which to filtering matchlist.
 | champion  | String     | Set of champion IDs for which to filtering matchlist.
 | beginIndex| Number     | The begin index to use for filtering matchlist.
-| endTime   | Number     | The end time to use for filtering matchlist specified as epoch milliseconds
+| endTime   | DatePicker | The end time to use for filtering matchlist
 
 ## LeagueOfLegends.getRecentMatchlist
 Get matchlist for last 20 matches played on given account ID and platform ID
@@ -241,7 +251,7 @@ Retrieves champion list
 | apiKey       | credentials| Api key obtained from Riot
 | region       | String     | Region to execute against
 | version      | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
-| champListData| String     | Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| champListData| List       | Tags to return additional data. Only type, version, data, id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 | dataById     | Boolean    | If specified as true, the returned data map will use the champions' IDs as the keys. If not specified or specified as false, the returned data map will use the champions' keys instead.
 | locale       | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
 
@@ -255,7 +265,7 @@ Retrieves champion by ID
 | championId| Number     | Id of the champion
 | version   | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale    | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| champData | String     | Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| champData | List       | Tags to return additional data. Only id, key, name, and title are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getItemList
 Retrieves item list
@@ -266,7 +276,7 @@ Retrieves item list
 | region      | String     | Region to execute against
 | version     | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale      | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| itemListData| String     | Tags to return additional data. Only type, version, basic, data, id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| itemListData| List       | Tags to return additional data. Only type, version, basic, data, id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getItemById
 Retrieves item by ID
@@ -278,7 +288,7 @@ Retrieves item by ID
 | itemId  | Number     | Id of the item
 | version | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale  | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| itemData| String     | Tags to return additional data. Only id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| itemData| List       | Tags to return additional data. Only id, name, plaintext, group, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getLanguageStrings
 Retrieve language strings data
@@ -317,7 +327,7 @@ Retrieves mastery list
 | region         | String     | Region to execute against
 | version        | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale         | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| masteryListData| String     | Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| masteryListData| List       | Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getMasteryById
 Retrieves mastery item by ID.
@@ -329,7 +339,7 @@ Retrieves mastery item by ID.
 | masteryId      | Number     | Id of the mastery
 | version        | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale         | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| masteryListData| String     | Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| masteryListData| List       | Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getProfileIcons
 Retrieve profile icons
@@ -358,19 +368,19 @@ Retrieves runes list
 | region      | String     | Region to execute against
 | version     | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale      | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| runeListData| String     | Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| runeListData| List       | Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getRuneById
 Retrieves rune by ID.
 
-| Field       | Type       | Description
-|-------------|------------|----------
-| apiKey      | credentials| Api key obtained from Riot
-| region      | String     | Region to execute against
-| runeId      | Number     | Id of the rune
-| version     | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
-| locale      | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| runeListData| String     | Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| Field   | Type       | Description
+|---------|------------|----------
+| apiKey  | credentials| Api key obtained from Riot
+| region  | String     | Region to execute against
+| runeId  | Number     | Id of the rune
+| version | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
+| locale  | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
+| runeData| List       | Tags to return additional data. Only type, version, data, id, name, rune, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getSummonerSpellList
 Retrieves summoner spell list
@@ -381,7 +391,7 @@ Retrieves summoner spell list
 | region       | String     | Region to execute against
 | version      | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale       | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| spellListData| String     | Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| spellListData| List       | Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 | dataById     | Boolean    | If specified as true, the returned data map will use the spells' IDs as the keys. If not specified or specified as false, the returned data map will use the spells' keys instead.
 
 ## LeagueOfLegends.getSummonerSpellById
@@ -394,7 +404,7 @@ Retrieves summoner spell by id
 | summonerSpellId| Number     | Id of the summoner spell
 | version        | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale         | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| spellListData  | String     | Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| spellData      | List       | Tags to return additional data. Only type, version, data, id, key, name, description, and summonerLevel are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getVersions
 Retrieve version data

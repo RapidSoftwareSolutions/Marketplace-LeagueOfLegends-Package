@@ -17,8 +17,8 @@ $app->post('/api/LeagueOfLegends/getChampionList', function ($request, $response
     if (isset($post_data['args']['version']) && strlen($post_data['args']['version']) > 0) {
         $body['version'] = $post_data['args']['version'];
     }
-    if (isset($post_data['args']['champListData']) && strlen($post_data['args']['champListData']) > 0) {
-        $body['champListData'] = $post_data['args']['champListData'];
+    if (!empty($post_data['args']['champListData'])) {
+        $body['champListData'] = is_array($post_data['args']['champListData']) ? implode(',', $post_data['args']['champListData']) : $post_data['args']['champListData'];
     }
     if (isset($post_data['args']['dataById']) && strlen($post_data['args']['dataById']) > 0) {
         $body['dataById'] = $post_data['args']['dataById'];

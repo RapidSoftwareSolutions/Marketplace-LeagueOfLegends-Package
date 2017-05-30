@@ -20,8 +20,8 @@ $app->post('/api/LeagueOfLegends/getItemList', function ($request, $response, $a
     if (isset($post_data['args']['locale']) && strlen($post_data['args']['locale']) > 0) {
         $body['locale'] = $post_data['args']['locale'];
     }
-    if (isset($post_data['args']['itemListData']) && strlen($post_data['args']['itemListData']) > 0) {
-        $body['itemListData'] = $post_data['args']['itemListData'];
+    if (!empty($post_data['args']['itemListData'])) {
+        $body['itemListData'] = is_array($post_data['args']['itemListData']) ? implode(',', $post_data['args']['itemListData']) : $post_data['args']['itemListData'];
     }
 
 
