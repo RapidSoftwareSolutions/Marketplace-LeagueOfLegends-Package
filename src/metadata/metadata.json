@@ -1295,7 +1295,7 @@
           "required": false
         },
         {
-          "name": "masteryListData",
+          "name": "masteryData",
           "type": "List",
           "info": "Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.",
           "required": false,

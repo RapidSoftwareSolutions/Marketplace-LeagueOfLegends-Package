@@ -339,7 +339,7 @@ Retrieves mastery item by ID.
 | masteryId      | Number     | Id of the mastery
 | version        | String     | Data dragon version for returned data. If not specified, the latest version for the region is used. List of valid versions can be obtained from the /versions endpoint
 | locale         | String     | Locale code for returned data (e.g., en_US, es_ES). If not specified, the default locale for the region is used.
-| masteryListData| List       | Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
+| masteryData| List       | Tags to return additional data. Only type, version, data, id, name, and description are returned by default if this parameter isn't specified. To return all additional data, use the tag 'all'.
 
 ## LeagueOfLegends.getProfileIcons
 Retrieve profile icons
