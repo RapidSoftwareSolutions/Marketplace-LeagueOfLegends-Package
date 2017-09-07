@@ -184,154 +184,6 @@
       ]
     },
     {
-      "name": "getLeaguesForSummonerIds",
-      "description": "Get leagues mapped by summoner ID for a given list of summoner IDs.",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from Riot",
-          "required": true
-        },
-        {
-          "name": "region",
-          "type": "String",
-          "info": "Region to execute against",
-          "required": true
-        },
-        {
-          "name": "summonerIds",
-          "type": "List",
-          "info": "Array of summoner IDs. Maximum allowed at once is 10.",
-          "required": true,
-          "structure": {
-            "name": "summonerId",
-            "type": "String",
-            "info": "Single summoner id"
-          }
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getLeagueEntriesForSummonerIds",
-      "description": "Get league entries mapped by summoner ID for a given list of summoner IDs.",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from Riot",
-          "required": true
-        },
-        {
-          "name": "region",
-          "type": "String",
-          "info": "Region to execute against",
-          "required": true
-        },
-        {
-          "name": "summonerIds",
-          "type": "List",
-          "info": "Array of summoner IDs. Maximum allowed at once is 10.",
-          "required": true,
-          "structure": {
-            "name": "summonerId",
-            "type": "String",
-            "info": "Single summoner id"
-          }
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getChallengerLeagues",
-      "description": "Get challenger tier leagues.",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from Riot",
-          "required": true
-        },
-        {
-          "name": "region",
-          "type": "String",
-          "info": "Region to execute against",
-          "required": true
-        },
-        {
-          "name": "type",
-          "type": "Select",
-          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5", "RANKED_TEAM_5x5", "RANKED_TEAM_3x3"],
-          "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3",
-          "required": true
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "getMasterLeagues",
-      "description": "Get master tier leagues.",
-      "args": [
-        {
-          "name": "apiKey",
-          "type": "credentials",
-          "info": "Api key obtained from Riot",
-          "required": true
-        },
-        {
-          "name": "region",
-          "type": "String",
-          "info": "Region to execute against",
-          "required": true
-        },
-        {
-          "name": "type",
-          "type": "Select",
-          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5", "RANKED_TEAM_5x5", "RANKED_TEAM_3x3"],
-          "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3",
-          "required": true
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
       "name": "getChallengerLeague",
       "description": "Get the challenger league for a given queue.",
       "args": [
@@ -350,7 +202,11 @@
         {
           "name": "type",
           "type": "Select",
-          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5"],
+          "options": [
+            "RANKED_FLEX_SR",
+            "RANKED_FLEX_TT",
+            "RANKED_SOLO_5x5"
+          ],
           "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5",
           "required": true
         }
@@ -419,7 +275,11 @@
         {
           "name": "type",
           "type": "Select",
-          "options": ["RANKED_FLEX_SR", "RANKED_FLEX_TT", "RANKED_SOLO_5x5"],
+          "options": [
+            "RANKED_FLEX_SR",
+            "RANKED_FLEX_TT",
+            "RANKED_SOLO_5x5"
+          ],
           "info": "Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5",
           "required": true
         }

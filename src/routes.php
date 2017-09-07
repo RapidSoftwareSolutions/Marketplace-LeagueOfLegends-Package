@@ -37,10 +37,7 @@
        'getMasterLeague',
        'getAllLeaguesForSummoner',
        'getChallengerLeague',
-       'getMasterLeagues',
-       'getChallengerLeagues',
-       'getLeagueEntriesForSummonerIds',
-       'getLeaguesForSummonerIds',
+
        'getChampionById',
        'getChampions',
        'getChampionMasteryScore',

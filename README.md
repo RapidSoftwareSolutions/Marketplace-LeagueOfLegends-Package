@@ -66,42 +66,6 @@ Retrieve champion by ID
 | region    | String     | Region to execute against
 | championId| Number     | Id of the champion
 
-## LeagueOfLegends.getLeaguesForSummonerIds
-Get leagues mapped by summoner ID for a given list of summoner IDs.
-
-| Field      | Type       | Description
-|------------|------------|----------
-| apiKey     | credentials| Api key obtained from Riot
-| region     | String     | Region to execute against
-| summonerIds| List       | Array of summoner IDs. Maximum allowed at once is 10.
-
-## LeagueOfLegends.getLeagueEntriesForSummonerIds
-Get league entries mapped by summoner ID for a given list of summoner IDs.
-
-| Field      | Type       | Description
-|------------|------------|----------
-| apiKey     | credentials| Api key obtained from Riot
-| region     | String     | Region to execute against
-| summonerIds| List       | Array of summoner IDs. Maximum allowed at once is 10.
-
-## LeagueOfLegends.getChallengerLeagues
-Get challenger tier leagues.
-
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| Api key obtained from Riot
-| region| String     | Region to execute against
-| type  | Select     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3
-
-## LeagueOfLegends.getMasterLeagues
-Get master tier leagues.
-
-| Field | Type       | Description
-|-------|------------|----------
-| apiKey| credentials| Api key obtained from Riot
-| region| String     | Region to execute against
-| type  | Select     | Game queue type. Values: RANKED_FLEX_SR, RANKED_FLEX_TT, RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3
-
 ## LeagueOfLegends.getChallengerLeague
 Get the challenger league for a given queue.
 
